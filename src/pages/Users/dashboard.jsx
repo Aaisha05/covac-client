@@ -58,13 +58,15 @@ const UsersDashboard = () => {
       <DemoCarousel/>
       <SearchBar onSearch={handleSearch} />
       <div className="container mx-auto px-4" ref={slotCardsContainerRef}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4">
-          {filteredSlotDetails.map((slot, index) => (
-            <div key={index}>
-              <SlotCard slot={slot} index={index} onBookNow={handleBookNow} />
-            </div>
-          ))}
-        </div>
+      <div className="container mx-auto px-4" ref={slotCardsContainerRef}>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-4">
+    {filteredSlotDetails.map((slot, index) => (
+      <div key={index}>
+        <SlotCard slot={slot} index={index} onBookNow={handleBookNow} />
+      </div>
+    ))}
+  </div>
+</div>
       </div>
     </div>
   );

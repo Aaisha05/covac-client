@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-//import adminn from "./svg2.png";
+import adminn from "./svg2.png";
+//style={{ backgroundColor: 'rgb(226, 239, 250)' }} light blue
 
 const Dashboard = () => {
   const [values, setValues] = useState({
@@ -80,96 +81,98 @@ const Dashboard = () => {
       <p className='text-base sm:text-base lg:text-lg text-black ml-4 mb-14 pl-2  md:pl-8 lg:pl-10 sm:pl-2'>
         Enter the slot details by filling in the required fields.
       </p>
-
-      <form onSubmit={handleSubmit} className="lg:ml-12 max-w-md mx-auto sm:max-w-lg lg:max-w-3xl bg-white p-8 border border-gray-300 rounded mb-4">
-        <div className='mb-4 flex flex-wrap'>
-          <div className='w-full lg:w-1/2 lg:pr-2'>
-            <label className='text-gray-700'>Slot ID:</label>
-            <input
-              className='input1 border border-gray-300 p-2 rounded w-full'
-              type="text"
-              name="slotid"
-              onChange={handleChange}
-            />
+<div className='flex flex-col md:flex-row md:gap-x-4'>
+  
+        <form onSubmit={handleSubmit} className="lg:ml-15 max-w-md mx-auto sm:max-w-lg lg:max-w-3xl bg-white p-8 border border-gray-300 rounded mb-4 md:mb-0">
+          <div className='mb-4 flex flex-wrap'>
+            <div className='w-full lg:w-1/2 lg:pr-2'>
+              <label className='text-gray-700'>Slot ID:</label>
+              <input
+                className='input1 border border-gray-300 p-2 rounded w-full'
+                type="text"
+                name="slotid"
+                onChange={handleChange}
+              />
+            </div>
+            <div className='w-full lg:w-1/2 lg:pl-2'>
+              <label className='text-gray-700'>Slot Name:</label>
+              <input
+                className='input1 border border-gray-300 p-2 rounded w-full'
+                type="text"
+                name="slotname"
+                onChange={handleChange}
+              />
+            </div>
           </div>
-          <div className='w-full lg:w-1/2 lg:pl-2'>
-            <label className='text-gray-700'>Slot Name:</label>
-            <input
-              className='input1 border border-gray-300 p-2 rounded w-full'
-              type="text"
-              name="slotname"
-              onChange={handleChange}
-            />
+  
+          <div className='mb-4 flex flex-wrap'>
+            <div className='w-full lg:w-1/2 lg:pr-2'>
+              <label className='text-gray-700'>Location:</label>
+              <input
+                className='input1 border border-gray-300 p-2 rounded w-full'
+                type="text"
+                name="location"
+                onChange={handleChange}
+              />
+            </div>
+            <div className='w-full lg:w-1/2 lg:pl-2'>
+              <label className='text-gray-700'>Capacity:</label>
+              <input
+                className='input1 border border-gray-300 p-2 rounded w-full'
+                type="number"
+                name="capacity"
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+  
+          <div className='mb-4 flex flex-wrap'>
+            <div className='w-full lg:w-1/2 lg:pr-2'>
+              <label className='text-gray-700'>Start Time:</label>
+              <input
+                className='input1 border border-gray-300 p-2 rounded w-full'
+                type="time"
+                name="starttime"
+                onChange={handleChange}
+              />
+            </div>
+            <div className='w-full lg:w-1/2 lg:pl-2'>
+              <label className='text-gray-700'>End Time:</label>
+              <input
+                className='input1 border border-gray-300 p-2 rounded w-full'
+                type="time"
+                name="endtime"
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+  
+          <div className=' flex justify-center'>
+            <button className='sub bg-black text-white py-2 px-4 rounded w-80 mt-4' type='submit'>Submit</button>
+          </div>
+        </form>
+  
+        {/* Right side box */}
+        <div className="right_box lg:mr-60 p-8  rounded mb-4 md:ml-0 md:mt-4">
+          <div className="mb-2">
+          <h1 className='font-semibold text-4xl text-black mb-4' >View other slot details</h1>
+          <p className="text-gray-700 text-lg mb-4">Click this to view and edit all the previous slot details.</p>
+          <button className='text-white bg-black px-4 py-2 rounded mt-4'style={{ backgroundColor: 'rgb(7, 90, 158)' }} onClick={handleViewDetails}>View all Slot Details</button>
           </div>
         </div>
-
-        <div className='mb-4 flex flex-wrap'>
-          <div className='w-full lg:w-1/2 lg:pr-2'>
-            <label className='text-gray-700'>Location:</label>
-            <input
-              className='input1 border border-gray-300 p-2 rounded w-full'
-              type="text"
-              name="location"
-              onChange={handleChange}
-            />
-          </div>
-          <div className='w-full lg:w-1/2 lg:pl-2'>
-            <label className='text-gray-700'>Capacity:</label>
-            <input
-              className='input1 border border-gray-300 p-2 rounded w-full'
-              type="number"
-              name="capacity"
-              onChange={handleChange}
-            />
-          </div>
-        </div>
-
-        <div className='mb-4 flex flex-wrap'>
-          <div className='w-full lg:w-1/2 lg:pr-2'>
-            <label className='text-gray-700'>Start Time:</label>
-            <input
-              className='input1 border border-gray-300 p-2 rounded w-full'
-              type="time"
-              name="starttime"
-              onChange={handleChange}
-            />
-          </div>
-          <div className='w-full lg:w-1/2 lg:pl-2'>
-            <label className='text-gray-700'>End Time:</label>
-            <input
-              className='input1 border border-gray-300 p-2 rounded w-full'
-              type="time"
-              name="endtime"
-              onChange={handleChange}
-            />
-          </div>
-        </div>
-
-        <div className=' flex justify-center'>
-          <button className='sub bg-black text-white py-2 px-4 rounded w-80 mt-4' type='submit'>Submit</button>
-        </div>
-      </form>
-
-      {/* Right side box */}
-      <div className="lg:absolute lg:top-1/2 lg:right-11 lg:transform lg:-translate-y-1/2 max-w-md mx-auto sm:max-w-lg lg:max-w-xl bg-white p-8 border border-gray-300 rounded mb-4">
-  <div className="mb-4">
-    <h1 className='font-semibold text-2xl mb-4' style={{ color: 'rgb(7, 90, 158)' }}>View other slot details</h1>
-    <p className="text-gray-700">Click this to view all the previous slot details and modify them</p>
-    <button className='text-white bg-black px-4 py-2 rounded mt-4' onClick={handleViewDetails}>View all Slot Details</button>
-  </div>
 </div>
 
 
       {/* Slot details table */}
-      <div className="lg:mx-60 lg:mt-52">
-  <div ref={showDetailsTableRef} className={`border border-gray-300 rounded ${showDetailsTable ? 'view' : 'view hidden'}`}>
+      <div className="lg:mx-60 lg:mt-32">
+  <div ref={showDetailsTableRef} className={` ${showDetailsTable ? 'view' : 'view hidden'}`}>
     {showDetailsTable && (
       <div>
-        <h2 className='text-center text-3xl font-semibold mb-12 mt-6' style={{ color: 'rgb(7, 90, 158)' }}>Previous Slot Details:</h2>
+        <h2 className='text-center text-3xl font-semibold mb-12 mt-6' >Previous Slot Details:</h2>
         <div className="overflow-x-auto">
           <table className='w-full mb-4 table-auto border-collapse'>
             <thead>
-              <tr className="bg-black text-white">
+            <tr className="bg-black text-white">
                 <th className="border font-normal border-gray-300 px-4 py-4">Slot ID</th>
                 <th className="border font-normal border-gray-300 px-4 py-4">Slot Name</th>
                 <th className="border font-normal border-gray-300 px-4 py-4">Location</th>
@@ -180,7 +183,7 @@ const Dashboard = () => {
               </tr>
             </thead>
             <tbody>
-              {slotDetails.map((slot, index) => (
+            {slotDetails.map((slot, index) => (
                 <tr key={index} className="bg-white">
                   <td className="border border-gray-300 px-4 py-2">{slot.slot_id}</td>
                   <td className="border border-gray-300 px-4 py-2">{slot.slot_name}</td>
@@ -200,17 +203,13 @@ const Dashboard = () => {
         </div>
         {showDetailsTable && (
           <div className="flex justify-center">
-            <button className='text-white bg-black px-4 py-2 rounded mt-4' onClick={handleHideDetails}>Hide details</button>
+            <button className='text-white bg-black px-4 py-2 rounded mt-4 mb-40' onClick={handleHideDetails}>Hide details</button>
           </div>
         )}
       </div>
     )}
   </div>
 </div>
-
-
-
-
     </div>
   );
 };

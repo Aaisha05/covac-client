@@ -1,4 +1,3 @@
-// slotCard.jsx
 import React, { useState } from 'react';
 import image5 from './image5.png'; // Import your standard image here
 
@@ -17,7 +16,7 @@ const SlotCard = ({ slot, index, onBookNow }) => {
   };
 
   return (
-    <div className="slot-card bg-white border border-gray-300 rounded-lg shadow-md p-6 mb-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4">
+    <div className="slot-card bg-white border border-gray-300 rounded-lg shadow-md p-6 mb-4 w-full sm:w-full md:w-full lg:w-full xl:w-[20rem] xl:h-[30rem]">
       <div className="mb-4">
         <img src={image5} alt={`Slot ${index}`} className="w-full h-auto mb-4" /> {/* Updated alt attribute */}
         <h3 className="text-center text-xl font-semibold">Slot ID: {slot.slot_id}</h3>
@@ -35,6 +34,8 @@ const SlotCard = ({ slot, index, onBookNow }) => {
 };
 
 export default SlotCard;
+
+
 
 
 
