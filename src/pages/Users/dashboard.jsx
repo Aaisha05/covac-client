@@ -43,21 +43,21 @@ const UsersDashboard = () => {
   return (
     <div>
       <div className='flex items-center justify-between bg-gray-100 p-4'>
-        <h1 className='text-5xl font-semibold text-black'>co<span style={{ color: 'rgb(7, 90, 158)' }}>V</span>ac</h1>
+        <h1 className='text-3xl font-bold  lg:text-5xl lg:font-semibold text-black'>co<span style={{ color: 'rgb(7, 90, 158)' }}>V</span>ac</h1>
         <Link to="/" className='text-white bg-black px-4 py-2 rounded'>Logout</Link>
       </div>
 
-      <h1 className='lg:text-3xl md:text-2xl sm:text-2xl text-2xl font-semibold text-black mb-4 mt-6 pl-4 md:pl-8 lg:pl-12 sm:pl-4'>
+      <h1 className='lg:text-3xl md:text-2xl sm:text-2xl text-2xl font-semibold text-black mb-2 lg:mb-4 mt-6 pl-4 md:pl-8 lg:pl-12 sm:pl-4'>
         Welcome <span style={{ color: 'rgb(7, 90, 158)' }}>User!</span>
       </h1>
 
-      <p className='text-base sm:text-base lg:text-lg text-black ml-4 mb-14 pl-2  md:pl-8 lg:pl-10 sm:pl-2'>
-        Enter the slot details by filling in the required fields.
+      <p className='text-base sm:text-base lg:text-lg text-black ml-3 lg:ml-4 mb-8 lg:mb-14 pl-2  md:pl-8 lg:pl-10 sm:pl-2'>
+        Check for availability and book your slots now!
       </p>
       
       <DemoCarousel/>
       <SearchBar onSearch={handleSearch} />
-      <div className="container mx-auto px-4" ref={slotCardsContainerRef}>
+      <div className="container  mx-auto px-4" ref={slotCardsContainerRef}>
       <div className="container mx-auto px-4" ref={slotCardsContainerRef}>
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-4">
     {filteredSlotDetails.map((slot, index) => (

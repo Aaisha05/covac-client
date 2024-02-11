@@ -26,7 +26,7 @@ const SlotCard = ({ slot, index, onBookNow }) => {
       <p className="mb-2"><span className="font-semibold">Capacity:</span> {slot.capacity}</p>
       <p className="mb-2"><span className="font-semibold">Start Time:</span> {slot.start_time}</p>
       <p className="mb-2"><span className="font-semibold">End Time:</span> {slot.end_time}</p>
-      {slot.capacity === 0 && <p className="full-slott bg-red-500 text-white font-semibold px-2 py-1 rounded-full absolute top-0 right-0">Full</p>}
+      
       <button className='book-now-button bg-blue-500 text-white px-4 py-2 rounded-full mt-4 block mx-auto' onClick={handleBookNow}>Book now</button>
       {bookingMessage && <p className="booking-message text-green-500 font-semibold text-center mt-2">{bookingMessage}</p>}
     </div>

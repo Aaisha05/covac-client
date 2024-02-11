@@ -10,7 +10,7 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div className="search-bar flex items-center justify-center">
+    <div className="search-bar flex items-center justify-center mb-20">
       <input
         className='border border-gray-300 rounded-md py-2 px-4 mr-2 focus:outline-none'
         placeholder="Search by location"
@@ -18,7 +18,7 @@ const SearchBar = ({ onSearch }) => {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
       <button className='bg-blue-500 text-white px-4 py-2 rounded-md flex items-center' onClick={handleSearch}>
-        <FaSearch className='mr-2' />
+        <FaSearch className='mr-2 ' />
         Search
       </button>
     </div>

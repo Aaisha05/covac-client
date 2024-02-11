@@ -70,11 +70,11 @@ const Dashboard = () => {
   return (
     <div className="relative">
       <div className='flex items-center justify-between bg-gray-100 p-4'>
-        <h1 className='text-5xl font-semibold text-black'>co<span style={{ color: 'rgb(7, 90, 158)' }}>V</span>ac</h1>
+        <h1 className='text-3xl font-bold  lg:text-5xl lg:font-semibold text-black'>co<span style={{ color: 'rgb(7, 90, 158)' }}>V</span>ac</h1>
         <Link to="/" className='text-white bg-black px-4 py-2 rounded'>Logout</Link>
       </div>
 
-      <h1 className='lg:text-3xl md:text-2xl sm:text-2xl text-2xl font-semibold text-black mb-4 mt-6 pl-4 md:pl-8 lg:pl-12 sm:pl-4'>
+      <h1 className='lg:text-3xl md:text-2xl sm:text-2xl text-2xl font-semibold text-black mb-2 lg:mb-4 mt-6 pl-4 md:pl-8 lg:pl-12 sm:pl-4'>
         Welcome <span style={{ color: 'rgb(7, 90, 158)' }}>Admin!</span>
       </h1>
 
@@ -155,8 +155,8 @@ const Dashboard = () => {
         {/* Right side box */}
         <div className="right_box lg:mr-60 p-8  rounded mb-4 md:ml-0 md:mt-4">
           <div className="mb-2">
-          <h1 className='font-semibold text-4xl text-black mb-4' >View other slot details</h1>
-          <p className="text-gray-700 text-lg mb-4">Click this to view and edit all the previous slot details.</p>
+          <h1 className='font-semibold text-2xl lg:text-4xl text-black mb-2 lg:mb-4' >View other slot details</h1>
+          <p className="text-gray-700 text-normal lg:text-lg mb-4">Click this to view and edit all the previous slot details.</p>
           <button className='text-white bg-black px-4 py-2 rounded mt-4'style={{ backgroundColor: 'rgb(7, 90, 158)' }} onClick={handleViewDetails}>View all Slot Details</button>
           </div>
         </div>
@@ -168,7 +168,7 @@ const Dashboard = () => {
   <div ref={showDetailsTableRef} className={` ${showDetailsTable ? 'view' : 'view hidden'}`}>
     {showDetailsTable && (
       <div>
-        <h2 className='text-center text-3xl font-semibold mb-12 mt-6' >Previous Slot Details:</h2>
+        <h2 className='text-center text-2xl lg:text-3xl font-semibold mb-8 lg:mb-12 mt-6' >Previous Slot Details:</h2>
         <div className="overflow-x-auto">
           <table className='w-full mb-4 table-auto border-collapse'>
             <thead>
@@ -203,7 +203,7 @@ const Dashboard = () => {
         </div>
         {showDetailsTable && (
           <div className="flex justify-center">
-            <button className='text-white bg-black px-4 py-2 rounded mt-4 mb-40' onClick={handleHideDetails}>Hide details</button>
+            <button className='text-white bg-black px-4 py-2 rounded mt-8 lg:mt-4 mb-40' onClick={handleHideDetails}>Hide details</button>
           </div>
         )}
       </div>
