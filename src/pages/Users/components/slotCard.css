@@ -1,0 +1,6 @@
+@media (max-width: 640px) {
+    .slot-card {
+      height: 38rem; /* Increase height for small screens */
+    }
+  }
+  

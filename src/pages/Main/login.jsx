@@ -19,7 +19,7 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post('http://localhost:5000/login', values)
+      .post('http://192.168.1.11:5000/login', values)
       .then((res) => {
         if (res.data.message === 'Login successful') {
           alert('Logged in successfully');

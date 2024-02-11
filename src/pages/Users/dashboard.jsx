@@ -1,4 +1,3 @@
-// dashboard.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import SlotCard from './components/slotCard';
@@ -47,16 +46,17 @@ const UsersDashboard = () => {
         <Link to="/" className='text-white bg-black px-4 py-2 rounded'>Logout</Link>
       </div>
 
-      <h1 className='lg:text-3xl md:text-2xl sm:text-2xl text-2xl font-semibold text-black mb-2 lg:mb-4 mt-6 pl-4 md:pl-8 lg:pl-12 sm:pl-4'>
+      <h1 className='lg:text-3xl md:text-2xl sm:text-2xl text-2xl font-semibold text-black mb-3 lg:mb-5 mt-6 pl-4 md:pl-8 lg:pl-12 sm:pl-4'>
         Welcome <span style={{ color: 'rgb(7, 90, 158)' }}>User!</span>
       </h1>
+      <p className='italic ml-8 lg:ml-12 lg:mb-4 mb-4 text-sm lg:text-lg  text-gray-500'>The ultimate site to book your Covid Vaccination slots.</p>
 
-      <p className='text-base sm:text-base lg:text-lg text-black ml-3 lg:ml-4 mb-8 lg:mb-14 pl-2  md:pl-8 lg:pl-10 sm:pl-2'>
-        Check for availability and book your slots now!
-      </p>
-      
-      
-      <SearchBar onSearch={handleSearch} />
+  <SearchBar onSearch={handleSearch} className="order-1 md:order-none" />
+  {/*<p className='text-base sm:text-base lg:text-lg text-black ml-3 lg:ml-4 mb-8 lg:mb-14 pl-2 md:pl-8 lg:pl-10 sm:pl-2 order-2 md:order-none'>
+    Check for availability and book your slots now!
+  </p>*/}
+   
+
       <DemoCarousel/>
       <h1 className='text-4xl lg:text-6xl text-center mb-10 lg:mb-20 text-black font-medium lg:font-semibold'>Your Slots</h1>
       <div className="container  mx-auto px-4" ref={slotCardsContainerRef}>

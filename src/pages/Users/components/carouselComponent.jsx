@@ -61,8 +61,8 @@ const DemoCarousel = () => {
             src={items[currentItem].imageUrl}
             alt={items[currentItem].title}
           />
-          <h2 className="text-xl md:text-3xl lg:text-4xl mt-3 lg:mt-6 font-semibold lg:font-medium text-left ml-5 lg:ml-10 "style={{ color: 'rgb(7, 90, 158)' }}>{items[currentItem].title}</h2>
-          <p className="text-normal  md:text-md lg:text-lg mb-20 lg:mb-20 mt-4 text-left ml-5 lg:ml-10">{items[currentItem].description}</p>
+          <h2 className="text-xl md:text-3xl lg:text-4xl mt-3 lg:mt-6 font-semibold lg:font-semi text-left ml-5 lg:ml-10 "style={{ color: 'rgb(7, 90, 158)' }}>{items[currentItem].title}</h2>
+          <p className="text-normal  md:text-md lg:text-xl mb-20 lg:mb-20 mt-2 lg:mt-4 text-left ml-5 lg:ml-10 italic">{items[currentItem].description}</p>
         </div>
       </div>
     </div>

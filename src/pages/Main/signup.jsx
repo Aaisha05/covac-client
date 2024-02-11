@@ -16,7 +16,7 @@ const Signup = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:5000/signup', values)
+    axios.post('http://192.168.1.11:5000/signup', values)
       .then(res => alert("Registered successfully"))
       .catch(err => console.log(err));
   }
@@ -26,9 +26,10 @@ const Signup = () => {
 
       {/* Left half - Display only on screens larger than small */}
       <div className="hidden sm:flex sm:flex-1 sm:bg-white sm:flex-col sm:justify-center sm:items-center">
-        <img className='h-72 w-auto mb-8' src={Svg2} alt="SVG Image" />
+        
         <h1 className='font-semibold text-8xl mb-4 relative'>co<span style={{ color: 'rgb(7, 90, 158)' }}>V</span>ac</h1>
         <p className='text-center text-lg mt-4 mb-10' style={{ color: 'rgb(7, 90, 158)' }}>The ultimate site to check the availability and book your <br/> Covid Vaccination slots!</p>
+        <img className='h-72 w-auto mb-8' src={Svg2} alt="SVG Image" />
       </div>
 
       {/* Right half - Display on all screens */}

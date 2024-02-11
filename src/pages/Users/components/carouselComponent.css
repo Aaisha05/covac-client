@@ -18,9 +18,10 @@
   object-fit: cover; /* Maintain aspect ratio and cover entire space */
 }
 
-@media screen and (min-width: 1024px) {
+@media (min-width: 768px) {
   .carousel-container {
-    height: 50%; /* Adjust the height for large screens */
+    width: 80%;
+    margin: 0 auto; 
   }
 }
 
