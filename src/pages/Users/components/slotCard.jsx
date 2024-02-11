@@ -3,12 +3,18 @@ import image5 from './image5.png'; // Import your standard image here
 import './slotCard.css';
 
 const SlotCard = ({ slot, index, onBookNow }) => {
-  const [bookingStatus, setBookingStatus] = useState(' Not Booked');
+  const [bookingStatus, setBookingStatus] = useState('Not Booked');
+  const [isSlotBooked, setIsSlotBooked] = useState(false);
 
   const handleBookNow = async () => {
     try {
-      await onBookNow(slot.slot_id);
-      setBookingStatus(' Booked');
+      if (!isSlotBooked) {
+        await onBookNow(slot.slot_id);
+        setBookingStatus('Booked');
+        setIsSlotBooked(true);
+      } else {
+        alert('This slot is already booked.');
+      }
     } catch (error) {
       console.error('Booking error:', error);
       // Handle booking error if needed
@@ -28,17 +34,20 @@ const SlotCard = ({ slot, index, onBookNow }) => {
       <p className="mb-2"><span className="font-semibold">Start Time:</span> {slot.start_time}</p>
       <p className="mb-2"><span className="font-semibold">End Time:</span> {slot.end_time}</p>
       <p className="mb-2"><span className="font-semibold">Booking Status:</span> 
-        <span className={bookingStatus === ' Booked' ? 'text-green-500 font-semibold lg:ml-2' : ''}>{bookingStatus}</span>
+        <span className={bookingStatus === 'Booked' ? 'text-green-500 font-semibold lg:ml-2' : ''}>{bookingStatus}</span>
       </p>
 
-      <div className="button-container absolute bottom-4 left-0 w-full text-center">
-        <button className='book-now-button bg-blue-500 text-white px-4 py-2 rounded-full inline-block' onClick={handleBookNow}>Book now</button>
-      </div>
+      {!isSlotBooked && (
+        <div className="button-container absolute bottom-4 left-0 w-full text-center">
+          <button className='book-now-button bg-blue-500 text-white px-4 py-2 rounded-full inline-block' onClick={handleBookNow}>Book now</button>
+        </div>
+      )}
     </div>
   );
 };
 
 export default SlotCard;
+
 
 
 

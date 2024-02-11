@@ -61,7 +61,7 @@ const UsersDashboard = () => {
       <h1 className='text-4xl lg:text-6xl text-center mb-10 lg:mb-20 text-black font-medium lg:font-semibold'>Your Slots</h1>
       <div className="container  mx-auto px-4" ref={slotCardsContainerRef}>
       <div className="container mx-auto px-4" ref={slotCardsContainerRef}>
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-4">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-4 lg:ml-36">
     {filteredSlotDetails.map((slot, index) => (
       <div key={index}>
         <SlotCard slot={slot} index={index} onBookNow={handleBookNow} />
