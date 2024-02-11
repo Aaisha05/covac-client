@@ -10,7 +10,7 @@ const items = [
     id: 1,
     imageUrl: img1,
     title:  'Stay Healthy',
-    description:'Eat healthy ! Stay healthy! Health is all we need to take care of, for without it we cannot lead a peaceful life.',
+    description:'Eat healthy ! Stay healthy! Health is all we need to take care of.',
   },
   {
     id: 2,
