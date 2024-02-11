@@ -53,7 +53,7 @@ const DemoCarousel = () => {
   }, [currentItem]);
 
   return (
-    <div className="carousel-container screen flex  lg:ml-40 ">
+    <div className="carousel-container screen flex ">
       <div className="carousel w-full h-full flex items-center justify-center">
         <div className="carousel-item w-full h-full text-center">
           <img
@@ -61,8 +61,8 @@ const DemoCarousel = () => {
             src={items[currentItem].imageUrl}
             alt={items[currentItem].title}
           />
-          <h2 className="text-xl md:text-3xl lg:text-4xl mt-3 lg:mt-6 font-semibold lg:font-medium text-left ml-5 lg:ml-40 ">{items[currentItem].title}</h2>
-          <p className="text-normal  md:text-md lg:text-lg mb-20 mt-4 text-left ml-5 lg:ml-40">{items[currentItem].description}</p>
+          <h2 className="text-xl md:text-3xl lg:text-4xl mt-3 lg:mt-6 font-semibold lg:font-medium text-left ml-5 lg:ml-10 "style={{ color: 'rgb(7, 90, 158)' }}>{items[currentItem].title}</h2>
+          <p className="text-normal  md:text-md lg:text-lg mb-20 lg:mb-20 mt-4 text-left ml-5 lg:ml-10">{items[currentItem].description}</p>
         </div>
       </div>
     </div>

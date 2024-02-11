@@ -55,8 +55,10 @@ const UsersDashboard = () => {
         Check for availability and book your slots now!
       </p>
       
-      <DemoCarousel/>
+      
       <SearchBar onSearch={handleSearch} />
+      <DemoCarousel/>
+      <h1 className='text-4xl lg:text-6xl text-center mb-10 lg:mb-20 text-black font-medium lg:font-semibold'>Your Slots</h1>
       <div className="container  mx-auto px-4" ref={slotCardsContainerRef}>
       <div className="container mx-auto px-4" ref={slotCardsContainerRef}>
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-4">

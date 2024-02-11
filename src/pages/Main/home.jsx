@@ -5,15 +5,15 @@ import Svg2 from './svg2.png';
 const Home1 = () => {
   return (
     <div className='flex h-screen'>
-      {/* Left half */}
-      <div className="flex-1 bg-white flex flex-col justify-center items-center">
+      {/* Left half - Display only on screens larger than small */}
+      <div className="hidden sm:flex sm:flex-1 sm:bg-white sm:flex-col sm:justify-center sm:items-center">
         <h1 className='font-semibold text-8xl mb-4 relative'>co<span style={{ color: 'rgb(7, 90, 158)' }}>V</span>ac</h1>
         <p className='text-center text-lg mt-4 mb-10' style={{ color: 'rgb(7, 90, 158)' }}>The ultimate site to check the availability and book your <br/> Covid Vaccination slots!</p>
         <img className='h-72 w-auto mb-8' src={Svg2} alt="SVG Image" />
       </div>
 
-      {/* Right half */}
-      <div className="flex-1 flex justify-center items-center" style={{ backgroundColor: 'rgb(226, 239, 250)' }}>
+      {/* Right half - Display on all screens */}
+      <div className="flex-1  flex justify-center items-center"style={{ backgroundColor: 'rgb(226, 239, 250)' }}>
         <div className='bg-white w-80 p-14 rounded-lg'>
           <p className='font-normal text-3xl text-center mt-4 mb-9'>Welcome!</p>
           <Link to="/login" className='block bg-black text-white text-center text-lg py-3 mb-5 rounded-md '>Login</Link>
@@ -25,6 +25,7 @@ const Home1 = () => {
 };
 
 export default Home1;
+
 
 
 
