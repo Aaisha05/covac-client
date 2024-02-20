@@ -16,7 +16,7 @@ const Signup = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://192.168.1.11/signup', values)
+    axios.post('https://covac-server.onrender.com/signup', values)
       .then(res => alert("Registered successfully"))
       .catch(err => console.log(err));
   }

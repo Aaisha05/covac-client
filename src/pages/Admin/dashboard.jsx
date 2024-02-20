@@ -25,7 +25,7 @@ const Dashboard = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://192.168.1.11:5000/slots', values)
+    axios.post('https://covac-server.onrender.com/slots', values) //like this okk replace all the localhost with : https://covac-server.onrender.com localhost matuma ilana motha url ah
       .then(res => {
         console.log(res);
         if (res.data.data === 'okay') {
@@ -38,7 +38,7 @@ const Dashboard = () => {
   };
 
   const handleViewDetails = () => {
-    axios.get('http://192.168.1.11:5000/slots')
+    axios.get('https://covac-server.onrender.com/slots')
       .then(res => {
         setSlotDetails(res.data);
         setShowDetailsTable(true);
@@ -51,7 +51,7 @@ const Dashboard = () => {
   };
 
   const handleDelete = (slotId) => {
-    axios.delete(`http://192.168.1.11:5000/slots/${slotId}`)
+    axios.delete(`https://covac-server.onrender.com/slots/${slotId}`)
       .then(res => {
         console.log(res);
         setSlotDetails(prevDetails => prevDetails.filter(slot => slot.slot_id !== slotId));

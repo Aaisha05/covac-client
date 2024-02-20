@@ -11,7 +11,7 @@ const UsersDashboard = () => {
   const slotCardsContainerRef = useRef(null);
 
   useEffect(() => {
-    axios.get('http://192.168.1.11:5000/user/slots')
+    axios.get('https://covac-server.onrender.com/user/slots')
       .then(res => {
         setUserSlotDetails(res.data);
         setFilteredSlotDetails(res.data);
@@ -30,7 +30,7 @@ const UsersDashboard = () => {
 
   const handleBookNow = (slotId) => {
     // Send a request to the backend to update the slot's capacity
-    axios.post('http://192.168.1.11:5000/user/slots', { slotId })
+    axios.post('https://covac-server.onrender.com/user/slots', { slotId })
       .then(res => {
         // Update the state with the new slot details
         setUserSlotDetails(res.data);
