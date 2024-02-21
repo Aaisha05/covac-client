@@ -19,7 +19,7 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post('https://covac-server.onrender.com/login', values)
+      .post('https://covac-server-1.onrender.com/login', values)
       .then((res) => {
         if (res.data.message === 'Login successful') {
           alert('Logged in successfully');
