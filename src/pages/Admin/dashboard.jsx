@@ -60,8 +60,16 @@ const Dashboard = () => {
       .catch(err => console.log(err));
   };
 
+  useEffect(()=>{
+    const admin = localStorage.getItem("admin")
+    if (!admin)
+    {
+      window.location.href = '/'
+    }
+
+  },[])
+
   useEffect(() => {
-    // Scroll to the showDetailsTable when it becomes visible
     if (showDetailsTable) {
       showDetailsTableRef.current.scrollIntoView({ behavior: 'smooth' });
     }

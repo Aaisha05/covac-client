@@ -26,8 +26,10 @@ const Login = () => {
           
           // Redirect based on the response
           if (res.data.redirect === '/admin/dashboard') {
+            localStorage.setItem("admin","Valid")
             navigate('/admin/dashboard'); // Redirect to Admin Dashboard
           } else if (res.data.redirect === '/users/dashboard') {
+            localStorage.setItem("user",`${values.email}`)
             navigate('/users/dashboard');
           } else {
             navigate('/'); // Redirect to a default route if needed

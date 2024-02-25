@@ -4,15 +4,15 @@ import './slotCard.css';
 
 const SlotCard = ({ slot, index, onBookNow }) => {
   const [bookingStatus, setBookingStatus] = useState('Not Booked'); // Default to 'Not Booked'
-  const [isSlotBooked, setIsSlotBooked] = useState(() => {
-    // Retrieve booking status from local storage if available
-    return localStorage.getItem(`isSlotBooked-${slot.slot_id}`) === 'true' || false;
-  });
+  const [isSlotBooked, setIsSlotBooked] = useState();
 
   useEffect(() => {
-    // Update local storage when booking status changes
-    localStorage.setItem(`isSlotBooked-${slot.slot_id}`, isSlotBooked);
-  }, [isSlotBooked, slot.slot_id]);
+    // Update local storage when booking status changes 
+    
+      const result =  localStorage.getItem(`${slot.slot_id}`) ? true : false;
+      setIsSlotBooked(result)
+    
+  }, []);
 
   const handleBookNow = async () => {
     try {
@@ -21,6 +21,8 @@ const SlotCard = ({ slot, index, onBookNow }) => {
       } else {
         await onBookNow(slot.slot_id);
         setBookingStatus('Booked');
+    localStorage.setItem(`${slot.slot_id}`, true);
+
         setIsSlotBooked(true);
       }
     } catch (error) {
@@ -41,8 +43,9 @@ const SlotCard = ({ slot, index, onBookNow }) => {
       <p className="mb-2"><span className="font-semibold">Capacity:</span> {slot.capacity}</p>
       <p className="mb-2"><span className="font-semibold">Start Time:</span> {slot.start_time}</p>
       <p className="mb-2"><span className="font-semibold">End Time:</span> {slot.end_time}</p>
-      <p className="mb-2"><span className="font-semibold">Booking Status:</span> 
-        <span className={bookingStatus === 'Booked' ? 'text-green-500 font-semibold lg:ml-2' : ''}>{bookingStatus}</span>
+      <p className="mb-2"><span className="font-semibold">Booking Status:  
+      </span> 
+      {isSlotBooked ? "Booked" : 'Open'}
       </p>
 
       {slot.capacity !== 0 && ( // Render the button if capacity is not zero

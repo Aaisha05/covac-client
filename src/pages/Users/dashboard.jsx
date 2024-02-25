@@ -9,6 +9,15 @@ const UsersDashboard = () => {
   const [userSlotDetails, setUserSlotDetails] = useState([]);
   const [filteredSlotDetails, setFilteredSlotDetails] = useState([]);
   const slotCardsContainerRef = useRef(null);
+  
+  useEffect(()=>{
+    const user = localStorage.getItem("user")
+    if (!user)
+    {
+      window.location.href = '/'
+    }
+
+  },[])
 
   useEffect(() => {
     axios.get('https://covac-server-1.onrender.com/user/slots')
@@ -24,7 +33,7 @@ const UsersDashboard = () => {
       (slot) => slot.location.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredSlotDetails(filteredSlots);
-    // Scroll to the slot cards container when searching
+
     slotCardsContainerRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
