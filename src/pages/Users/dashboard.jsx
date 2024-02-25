@@ -37,6 +37,11 @@ const UsersDashboard = () => {
     slotCardsContainerRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleLogout=()=>{
+    localStorage.removeItem("user");
+    window.location.href="/";
+  }
+
   const handleBookNow = (slotId) => {
     // Send a request to the backend to update the slot's capacity
     axios.post('https://covac-server-1.onrender.com/user/slots', { slotId })
@@ -52,7 +57,7 @@ const UsersDashboard = () => {
     <div>
       <div className='flex items-center justify-between bg-gray-100 p-4'>
         <h1 className='text-3xl font-bold  lg:text-5xl lg:font-semibold text-black'>co<span style={{ color: 'rgb(7, 90, 158)' }}>V</span>ac</h1>
-        <Link to="/" className='text-white bg-black px-4 py-2 rounded'>Logout</Link>
+        <button onClick={handleLogout} className='text-white bg-black px-4 py-2 rounded'>Logout</button>
       </div>
 
       <h1 className='lg:text-3xl md:text-2xl sm:text-2xl text-2xl font-semibold text-black mb-3 lg:mb-5 mt-6 pl-4 md:pl-8 lg:pl-12 sm:pl-4'>

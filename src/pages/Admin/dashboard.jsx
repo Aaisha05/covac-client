@@ -13,6 +13,7 @@ const Dashboard = () => {
     capacity: '',
     starttime: '',
     endtime: '',
+    locationurl: '',
   });
 
   const [slotDetails, setSlotDetails] = useState([]);
@@ -45,6 +46,11 @@ const Dashboard = () => {
       })
       .catch(err => console.log(err));
   };
+
+  const handleLogout=()=>{
+    localStorage.removeItem("admin");
+    window.location.href="/";
+  }
 
   const handleHideDetails = () => {
     setShowDetailsTable(false);
@@ -79,7 +85,7 @@ const Dashboard = () => {
     <div className="relative">
       <div className='flex items-center justify-between bg-gray-100 p-4'>
         <h1 className='text-3xl font-bold  lg:text-5xl lg:font-semibold text-black'>co<span style={{ color: 'rgb(7, 90, 158)' }}>V</span>ac</h1>
-        <Link to="/" className='text-white bg-black px-4 py-2 rounded'>Logout</Link>
+        <button onClick={handleLogout} className='text-white bg-black px-4 py-2 rounded'>Logout</button>
       </div>
 
       <h1 className='lg:text-3xl md:text-2xl sm:text-2xl text-2xl font-semibold text-black mb-2 lg:mb-4 mt-6 pl-4 md:pl-8 lg:pl-12 sm:pl-4'>
@@ -154,6 +160,15 @@ const Dashboard = () => {
               />
             </div>
           </div>
+          <div className='w-full mb-4 lg:pl-1 '>
+    <label className='text-gray-700'>Location URL:</label>
+    <input
+      className='input1 border border-gray-300 p-2 rounded w-full'
+      type="text"
+      name="locationurl"
+      onChange={handleChange}
+    />
+  </div>
   
           <div className=' flex justify-center'>
             <button className='sub bg-black text-white py-2 px-4 rounded w-80 mt-4' type='submit'>Submit</button>
