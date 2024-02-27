@@ -43,7 +43,7 @@ const SlotCard = ({ slot, index, onBookNow }) => {
       <p className="mb-2"><span className="font-semibold">Capacity:</span> {slot.capacity}</p>
       <p className="mb-2"><span className="font-semibold">Start Time:</span> {slot.start_time}</p>
       <p className="mb-2"><span className="font-semibold">End Time:</span> {slot.end_time}</p>
-      <p className="mb-2"><span className="font-semibold">Location URL:</span> {slot.locationurl}</p>
+      <p className="mb-2"><span className="font-semibold">Location URL:</span> <a className='font-normal text-blue-800' href={slot.locationurl} target="_blank" rel="noopener noreferrer">Click here</a></p>
       <p className="mb-2"><span className="font-semibold">Booking Status:  
       </span> 
       {isSlotBooked ? "Booked" : 'Open'}
