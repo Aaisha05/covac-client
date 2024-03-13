@@ -56,7 +56,7 @@ const UsersDashboard = () => {
 
   return (
     <div>
-      <div className='flex items-center justify-between  p-4'style={{ backgroundColor: 'rgb(226, 239, 250)' }}>
+      <div className='flex items-center justify-between  bg-gray-100  p-4'>
         <h1 className='text-3xl font-bold  lg:text-5xl lg:font-semibold text-black'>co<span style={{ color: 'rgb(7, 90, 158)' }}>V</span>ac</h1>
         <button onClick={handleLogout} className='text-white bg-black px-4 py-2 rounded'>Logout</button>
       </div>

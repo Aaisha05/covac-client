@@ -23,7 +23,7 @@ const ChatBot = () => {
 
   const handleChatbotResponse = (message) => {
     let response = '';
-    if (message === 'hi' || message === 'hello') {
+    if (message === 'hi' || message === 'hello' || message === 'hey') {
         response = 'Hi there! How can I assist you today?';
       } else if (message === 'aaisha') {
         response = "Developer of covac";
@@ -38,9 +38,11 @@ const ChatBot = () => {
       } else if (message.includes('slots') && message.includes('chennai')){
         response = "Yes!"
       } else if (message.includes('book') && message.includes('how')){
-        response = "In your user dashboard hit the book now button for your desired slot"
+        response = "In your user dashboard hit the book now button to book your desired slot"
       } else if (message.includes('book') && message.includes('where')){
-        response = "In your user dashboard hit the book now button for your desired slot"
+        response = "In your user dashboard hit the book now button to book your desired slot"
+      } else if (message.includes('slots') && message.includes('available')){
+        response = "Yes!, they are available"
       }
       else {
         response = "I'm sorry, I didn't understand that.";
