@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Svg2 from './svg2.png';
+import Footer from '../Users/components/Footer';
 
 const Home1 = () => {
   return (
@@ -21,6 +22,7 @@ const Home1 = () => {
           <Link to="/signup" className='block text-white text-center text-lg py-3 rounded-md' style={{ backgroundColor: 'rgb(7, 90, 158)' }}>Sign Up</Link>
         </div>
       </div>
+      
     </div>
   );
 };

@@ -44,14 +44,14 @@ const SlotCard = ({ slot, index, onBookNow }) => {
       <p className="mb-2"><span className="font-semibold">Start Time:</span> {slot.start_time}</p>
       <p className="mb-2"><span className="font-semibold">End Time:</span> {slot.end_time}</p>
       <p className="mb-2"><span className="font-semibold">Location URL:</span> <a className='font-normal text-blue-800' href={slot.locationurl} target="_blank" rel="noopener noreferrer">Click here</a></p>
-      <p className="mb-2"><span className="font-semibold">Booking Status:  
+      <p className="mb-1"><span className="font-semibold">Booking Status:  
       </span> 
       {isSlotBooked ? "Booked" : 'Open'}
       </p>
 
       {slot.capacity !== 0 && ( // Render the button if capacity is not zero
-        <div className="button-container absolute bottom-4 left-0 w-full text-center mt-4">
-          <button disabled={isSlotBooked} className='book-now-button bg-blue-500 mt-2 text-white px-4 py-2 rounded-full inline-block' onClick={handleBookNow}>Book now</button>
+        <div className="button-container    w-full text-center">
+          <button disabled={isSlotBooked} className='book-now-button bg-blue-500 mt-1 text-white px-4 py-1 rounded-full inline-block' onClick={handleBookNow}>Book now</button>
         </div>
       )}
     </div>
